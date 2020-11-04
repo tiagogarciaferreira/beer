@@ -1,0 +1,67 @@
+{"properties": [
+  {
+    "name": "spring.jpa.hibernate.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.hibernate.dialect'"
+  },
+  {
+    "name": "spring.datasource.maximum-pool-size",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.maximum-pool-size'"
+  },
+  {
+    "name": "server.session.tracking-modes",
+    "type": "java.lang.String",
+    "description": "A description for 'server.session.tracking-modes'"
+  },
+  {
+    "name": "send.grid.mail.username",
+    "type": "java.lang.String",
+    "description": "A description for 'send.grid.mail.username'"
+  },
+  {
+    "name": "send.grid.mail.password",
+    "type": "java.lang.String",
+    "description": "A description for 'send.grid.mail.password'"
+  },
+  {
+    "name": "send.grid.mail.api.key",
+    "type": "java.lang.String",
+    "description": "A description for 'send.grid.mail.api.key'"
+  },
+  {
+    "name": "amazon.secret.key",
+    "type": "java.lang.String",
+    "description": "A description for 'amazon.secret.key'"
+  },
+  {
+    "name": "amazon.access.key",
+    "type": "java.lang.String",
+    "description": "A description for 'amazon.access.key'"
+  },
+  {
+    "name": "amazon.url.base",
+    "type": "java.lang.String",
+    "description": "A description for 'amazon.url.base'"
+  },
+  {
+    "name": "amazon.bucket",
+    "type": "java.lang.String",
+    "description": "A description for 'amazon.bucket'"
+  },
+  {
+    "name": "amazon.folder.img",
+    "type": "java.lang.String",
+    "description": "A description for 'amazon.folder.img'"
+  },
+  {
+    "name": "dominio.base.url",
+    "type": "java.lang.String",
+    "description": "A description for 'dominio.base.url'"
+  },
+  {
+    "name": "spring.jpa.orm",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.jpa.orm'"
+  }
+]}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<title>Beer</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/algaworks.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/application.css}"/>
+	<link type="image/png" rel="icon" 	   th:href="@{/images/beer-icon.ico}" />
+</head>
+
+<body class="aw-layout-simple-page">
+  <div class="aw-layout-simple-page__container">
+
+<form th:action="@{/login}" method="POST">
+	<div class="aw-simple-panel">
+		<img alt="Beer" th:src="@{/images/logo.png}" width="200px" height="150px"/>
+		
+		<div class="aw-simple-panel__message">
+			<b>Por favor, faça o login.</b>
+		</div>
+		
+		<div class="aw-simple-panel__message  is-error" th:if="${#bools.isTrue(param.error)}">
+			<b>Usuário e/ou senha incorretos.</b>
+		</div>
+		
+		<div class="aw-simple-panel__box">
+			<div class="form-group  has-feedback">
+				<input type="text" class="form-control  input-lg" placeholder="Seu usuário" autofocus="autofocus" name="username"/>
+				<span class="glyphicon  glyphicon-envelope  form-control-feedback"></span>
+			</div>
+			
+			<div class="form-group  has-feedback">
+				<input type="password" class="form-control  input-lg" placeholder="Sua senha" name="password"/>
+				<span class="glyphicon  glyphicon-lock  form-control-feedback" ></span>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn  btn-primary  btn-lg  aw-btn-full-width">Entrar</button>
+			</div>
+			
+		</div>
+	</div>
+</form>
+
+  </div>
+
+	<script type="text/javascript" th:src="@{/javascripts/public/vendors.min.js}"></script>
+	<script type="text/javascript" th:src="@{/javascripts/public/algaworks.min.js}"></script>
+</body>
+</html>

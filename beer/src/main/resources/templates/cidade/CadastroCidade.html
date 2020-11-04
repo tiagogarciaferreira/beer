@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{/layout/LayoutPadrao.html}"
+	xmlns:beer="http://beer.tgfcodes.com">
+
+<head>
+	<title>Cadastro de Cidade</title>
+</head>
+
+<section layout:fragment="conteudo">
+
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-10">
+					<h1 th:if="${cidade.nova}">Cadastro de cidades</h1>
+					<h1 th:unless="${cidade.nova}" th:text="|Edição da cidade: ${cidade.nome}|">Edição de cidade</h1>
+				</div>
+				
+				<div class="col-xs-2">
+					<div class="aw-page-header-controls">
+						<a class="btn btn-info" th:href="@{/cidade/pesquisar}">
+							<i class="glyphicon  glyphicon-plus-sign"></i> <span class="hidden-xs  hidden-sm">Pesquisar cidade</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+		<form th:action="@{/cidade/nova}" method="POST" th:object="${cidade}" class="form-vertical  js-form-loading" >
+			<beer:message/>
+			<input type="hidden" th:field="*{codigo}"/>
+			<div class="row">
+				<div class="form-group  col-sm-4 bw-required" beer:classforerror="estado" >
+					<label for="estado" class="control-label">Estado</label>
+					<select id="estado" class="form-control" th:field="*{estado}">
+	                    <option value="">Selecione o estado</option>
+	                    <option th:each="estado : ${estados}" th:value="${estado.codigo}" th:text="${estado.nome}"></option>
+	                </select>
+				</div>
+				
+				<div class="form-group  col-sm-8 bw-required" beer:classforerror="nome">
+					<label for="nome" class="control-label">Nome</label>
+					<input type="text" class="form-control" id="nome" autofocus="autofocus" th:field="*{nome}"/>
+				</div>
+			</div>
+			
+			<button type="submit" class="btn  btn-primary">Salvar</button>
+		</form>
+	</div>
+</section>
+
+</html>

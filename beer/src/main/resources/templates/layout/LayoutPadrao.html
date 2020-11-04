@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+	<meta name="_csrf" th:content="${_csrf.token}"/>
+	<title>Beer</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/algaworks.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/application.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/beer.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css}"/>
+	<link type="image/png" rel="icon" 	   th:href="@{/images/beer-icon.ico}" />
+</head>
+
+<body>
+	<div class="aw-layout-page">
+		<div th:replace="~{/layout/fragments/BarraNavegacao :: navbar}"></div>	
+		<div th:replace="~{/layout/fragments/MenuLateral :: layout-sidbar}"></div>	
+		<section class="aw-layout-content  js-content" layout:fragment="conteudo"></section>
+		<div th:replace="~{/layout/fragments/LayoutFooter :: layout-footer}"></div>	
+	</div>
+	
+	<script type="text/javascript" th:src="@{/javascripts/public/vendors.min.js}"></script>
+	<script type="text/javascript" th:src="@{/javascripts/public/algaworks.min.js}"></script>
+	<script type="text/javascript" th:src="@{/vendors/jquery-maskmoney/jquery-maskmoney.js}"></script>
+	<script type="text/javascript" th:src="@{/vendors/jquery-mask/jquery.mask.min.js}"></script>
+	<script type="text/javascript" th:src="@{/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js}"></script>
+	<script type="text/javascript" th:src="@{/vendors/bootstrap-datepicker/bootstrap-datepicker.pt-BR.min.js}"></script>
+	<script type="text/javascript" th:src="@{/vendors/numeral-js/numeral.min.js}"></script>
+	<script type="text/javascript" th:src="@{/vendors/numeral-js/pt-br.min.js}"></script>
+	<script type="text/javascript" th:src="@{/javascripts/private/beer.js}"></script>
+	<script type="text/javascript" th:src="@{/javascripts/private/beer.dialogo-excluir.js}"></script>
+	<th:block layout:fragment="javascript-extra"> </th:block>
+</body>
+</html>
